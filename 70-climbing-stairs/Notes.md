@@ -1,2 +1,2 @@
 <h2>climbing-stairs Notes</h2><hr>Used DP to optimize otherwise giving TLE.
-Make a vector named dp and store the values which are given in the base condition and which are getting calculated as we're going
+Make a vector named dp and store the values which are given in the base condition and which are getting calculated as we're going further in the recur
