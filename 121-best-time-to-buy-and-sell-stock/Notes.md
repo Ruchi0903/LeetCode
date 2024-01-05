@@ -1,1 +1,1 @@
-<h2>best-time-to-buy-and-sell-stock Notes</h2><hr>check if the curr elem is 
+<h2>best-time-to-buy-and-sell-stock Notes</h2><hr>check if the curr elem is less than minPrice 
