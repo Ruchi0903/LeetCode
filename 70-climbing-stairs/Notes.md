@@ -1,1 +1,1 @@
-<h2>climbing-stairs Notes</h2><hr>Used DP to optimize otherwise giving r
+<h2>climbing-stairs Notes</h2><hr>Used DP to optimize otherwise giving runtime
