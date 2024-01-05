@@ -1,1 +1,2 @@
 <h2>climbing-stairs Notes</h2><hr>Used DP to optimize otherwise giving TLE.
+Make a 
