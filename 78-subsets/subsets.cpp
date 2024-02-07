@@ -1,26 +1,29 @@
-// Recursive Solution
-// Time complexity : O(N*(2^N))
-// Space complexity : O(N*(2^N))
 class Solution {
 public:
-    vector<vector<int>> ans;
-    
-    void sub(vector<int> &nums, int i, vector<int> temp)
-    {
-        if(i==nums.size())
-        {
-            ans.push_back(temp);
-            return;
+    vector<vector<int>> helper(vector<int>& nums, int i){
+
+        // base case
+        if(i>= nums.size()) return {{}};
+
+        vector<vector<int>> partialAns = helper(nums, i+1);     // start from i+1th element, we'll deal with ith element.
+        vector<vector<int>> ans;
+
+        // in ans, push all of the elements (subsets) of partialAns
+        for(vector<int> x:partialAns){
+            ans.push_back(x);
         }
-        
-        sub(nums, i+1, temp);
-        temp.push_back(nums[i]);
-        sub(nums, i+1, temp);
-    }
-    
-    vector<vector<int>> subsets(vector<int>& nums) {
-        vector<int> temp;       
-        sub(nums, 0, temp); // or sub(nums, 0, vector<int> {});
+
+// Now add the ith element in each of the subsets which are now present in ans and paritalAns vectors. Since we told recursion to deal with all the elements except ith.
+
+        for(vector<int> x:partialAns){
+            x.push_back(nums[i]);
+            ans.push_back(x);
+        }
+
         return ans;
+
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        return helper(nums,0);
     }
 };
